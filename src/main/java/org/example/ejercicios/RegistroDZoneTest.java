@@ -103,7 +103,14 @@ public class RegistroDZoneTest {
         WebElement iconEye = driver.findElement(By.xpath("/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[2]/form/div[3]/button/i"));
         Assert.assertEquals(true, iconEye.isDisplayed());
 
-        System.out.println("La contraseña si esta visualizandose.");
+        System.out.println("El boton de visualización del password está activado.");
+
+        WebElement tipo = driver.findElement(By.xpath("//input[@type=\"text\"]"));
+        String attribute = tipo.getAttribute("type");
+        System.out.println("Valor del attribute: "+attribute);
+
+        Assert.assertEquals("text",attribute);
+        System.out.println("La contraseña si esta visualizandose en texto claro.");
 
 
     }
